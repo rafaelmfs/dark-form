@@ -1,10 +1,15 @@
 import { useEffect } from "react";
-import { Outlet, redirect } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { AUTH_ROUTES } from "../../constants/routesConstants";
 
 export function AuthLayout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    redirect(AUTH_ROUTES.LOGIN);
+    if (location.pathname === "/") {
+      navigate(AUTH_ROUTES.LOGIN);
+    }
   }, []);
 
   return (
