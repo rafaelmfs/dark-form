@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input:-internal-autofill-selected {
+    background-color: transparent !important;
+  }
+}
+
+@layer components {
+  input:-internal-autofill-selected {
+    background-color: transparent !important;
+  }
+}
